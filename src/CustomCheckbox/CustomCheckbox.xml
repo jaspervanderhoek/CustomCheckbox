@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="CustomCheckbox.widget.CustomCheckbox" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>Custom Checkbox</name>
+    <description>Checkbox that actually shows as checbox when it is readonly.</description>
+
+    <icon>iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGeSURBVDhPtZS/TgJBEMaHTRA4gglKNBIThcYCo41iLLGygdan8AEsrCx8AB9AW1torLRE0UYjJDagicE/EUkkHCiJON96GO9gV0jkV5Awu/vd7Mx+42ozNAS6hIsvTcrd1um63KDCQ9OKduNzuygS8tB82EfxWT9FQ15r5RubcOaqSvvZivXPjsFCiblRWon4KTLukbFS5Z3OSnU6LdYotRik5EJQxsGP8O5Rmc7vTBl0Epvy0mZikiYCbiti57nWor2TJzJGBG2th2VM4CfNmepEd1LTSlGANewxPz6lFhCo6YHm+si0X7A3c1mVfRKokYo1rqkuUyfYuxoNyLqLPHdfRZwbNSg4A02BzqrodH8QcAaasnnDQOiy0t1GBc5AU8TYOSpymsaqwBloCjgJ9uzF8c2bfPz9gr1ZdiE0BTy+sTRmLdkxW23pqH7B3iRbG5qyeSn2+PKMIRed5HkQbafvtZljDXtgaWgB2xCCHQ8vXqnBmTqBC2EYvNPfQwg1xfWRaUcU9BybcA4eeeHxj7HJH0CjUFPt2Pw/iL4AVR27AkJTuZYAAAAASUVORK5CYII=</icon>
+
+    <properties>
+        <property key="dataAttr" type="attribute" required="true" isPath="optional" pathType="reference">
+            <caption>Boolean Attribute</caption>
+            <category>Behavior</category>
+            <description>The Boolean attribute.</description>
+            <attributeTypes>
+                <attributeType name="Boolean" />
+            </attributeTypes>
+        </property>
+        <property key="onChangeMF" type="microflow" required="false">
+            <caption>onChange Microflow</caption>
+            <category>Behavior</category>
+            <description>Microflow to trigger when button is toggled</description>
+            <returnType type="Void" />
+        </property>
+        <property key="editable" type="boolean" required="true" defaultValue="true">
+            <caption>Editable</caption>
+            <category>Behavior</category>
+            <description>Whether the user is allowed to change the value.</description>
+        </property>
+        <property key="condEditableAttr" type="attribute" required="false">
+            <caption>Editability Condition Attribute</caption>
+            <category>Behavior</category>
+            <description>Conditional editability, the checkbox becomes editable when this attribute matches any of the values in the condition (by default not editable).</description>
+            <attributeTypes>
+                <attributeType name="Boolean" />
+                <attributeType name="Enum" />
+            </attributeTypes>
+        </property>
+		<property key="conditions" type="object" isList="true" required="false">
+            <caption>Conditions</caption>
+            <category>Behavior</category>
+            <description></description>
+            <properties>
+                <property key="condition" type="string" required="true">
+                    <caption>Editable when</caption>
+                    <category>Condition</category>
+                    <description>The checkbox will be editable when it has this value (empty condition should be written as null)</description>
+                </property>
+			</properties>
+		</property>
+    </properties>
+</widget>
+
